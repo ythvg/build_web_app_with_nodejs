@@ -12,8 +12,6 @@ const port = 3000;
 
 const server = http.createServer((req, res) => {
     const pathname = url.parse(req.url).pathname;
-    console.dir(url.parse(req.url))
-    console.log(process.cwd());
     fs.readFile(path.join(process.cwd(), pathname), (err, data) => {
         if (err) {
             res.writeHead(404);
